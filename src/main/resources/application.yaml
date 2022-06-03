@@ -1,0 +1,37 @@
+environment: "${SPRING_PROFILES_ACTIVE:local}"
+
+server:
+  port: ${PORT:8080}
+
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  application:
+    name: "${environment}-github-oauth"
+  main:
+    banner-mode: "off"
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 6e716ffdaeb49d45fd9f
+            clientSecret: 5878dfa0222005e6a8a904f27e0526e1892d133a
+          google:
+            client-id: 39895195914-dhhb2thpqb75oshvrj9a7eu8uui0qpbt.apps.googleusercontent.com
+            client-secret: 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
+
+management:
+  server.port: ${MANAGEMENT_PORT:8081}
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    prometheus:
+      enabled: true
