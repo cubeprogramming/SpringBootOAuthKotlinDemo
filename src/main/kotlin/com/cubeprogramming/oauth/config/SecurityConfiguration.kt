@@ -27,6 +27,7 @@ class SecurityConfiguration {
             }
             .logout {
                 it.logoutSuccessUrl("/").permitAll()
+                it.deleteCookies("JSESSIONID")
             }
             .csrf {
                 it.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())

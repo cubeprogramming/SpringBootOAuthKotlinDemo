@@ -35,6 +35,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-log4j2")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+//	implementation("org.springframework.security.oauth:spring-security-oauth2")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -47,6 +48,10 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
+	implementation(platform("com.google.cloud:libraries-bom:25.4.0"))
+	implementation("com.google.cloud:google-cloud-storage")
+//	implementation("com.google.auth:google-auth-library-oauth2-http:1.3.0")
+	implementation("com.google.api-client:google-api-client")
 }
 
 tasks.withType<KotlinCompile> {
